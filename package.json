@@ -9,7 +9,7 @@
     "start": "react-native start",
     "test": "jest",
     "android:release": "react-native run-android --mode=releaseStaging",
-    "android:pushStaging": "appcenter codepush release-react -d Staging -t '^1.2.0'",
+    "android:pushStaging": "appcenter codepush release-react -d Staging -t '*'",
     "gradlew:staging": "cd android && ./gradlew clean && ./gradlew assembleReleaseStaging && cd ..",
     "displayKeys": "appcenter codepush deployment list --displayKeys",
     "release-list": "appcenter codepush deployment list -a weimi/newapp-android"

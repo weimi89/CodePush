@@ -54,10 +54,11 @@ const App = () => {
         codePush.restartApp(true);
       }).catch(reason => {
         // error();
+        setMessage(reason);
         console.log(reason)
       });
     }).catch((reason) => {
-      // error();
+      setMessage(reason);
       console.log(reason)
     });
   };
@@ -69,7 +70,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>版本号 1.2.1</Text>
+      <Text style={styles.welcome}>版本号 1.2.8</Text>
       <Text style={styles.instructions}>{message}</Text>
       <Text style={styles.instructions}>{progress}</Text>
       <TouchableOpacity onPress={onButtonPress}>
