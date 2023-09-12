@@ -20,6 +20,7 @@ const App = () => {
           syncInNonSilent(remotePackage)
         } else {
           setMessage('已是最新，不需要更新！')
+          setShowProgress('')
         }
       })
       .catch((error) => console.log(error))
@@ -54,7 +55,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>版本号 1.3.0</Text>
+      <Text style={styles.welcome}>版本号 1.4.1</Text>
       <Text style={styles.instructions}>{message}</Text>
       <Text style={styles.instructions}>{showProgress}</Text>
     </View>
@@ -82,3 +83,4 @@ const styles = StyleSheet.create({
 
 // export default codePush(codePushOptions)(App);
 export default codePush(App)
+

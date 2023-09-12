@@ -8,11 +8,18 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    "set-current": "appcenter apps set-current weimi/newapp-ios",
+    "//set-current": "將當前 app 設為 android 或 ios",
     "android:release": "react-native run-android --mode=releaseStaging",
+    "//android:release": "安卓在本地調試安裝",
     "android:pushStaging": "appcenter codepush release-react -d Staging -t '*'",
+    "//android:pushStaging": "發佈更新",
     "gradlew:staging": "cd android && ./gradlew clean && ./gradlew assembleReleaseStaging && cd ..",
+    "//gradlew:staging": "安卓打包 apk",
     "displayKeys": "appcenter codepush deployment list --displayKeys",
-    "release-list": "appcenter codepush deployment list -a weimi/newapp-android"
+    "//displayKeys": "查詢 key",
+    "release-list": "appcenter codepush deployment list",
+    "//release-list": "檢視發佈結果"
   },
   "dependencies": {
     "appcenter": "5.0.0",
