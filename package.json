@@ -18,7 +18,7 @@
     "android:gradlew-staging": "echo '安卓打包測試 apk' && cd android && ./gradlew clean && ./gradlew assembleStaging && cd ..",
     "android:gradlew-release": "echo '安卓打包正式 apk' && cd android && ./gradlew clean && ./gradlew assembleRelease && cd ..",
 
-    "ios:staging": "echo '蘋果在本機安裝測試' && react-native run-ios --configuration Staging --device Grace",
+    "ios:staging": "echo '蘋果在本機安裝測試' && deviceName='Grace' && echo \"安裝至 $deviceName 裝置\" && react-native run-ios --configuration Staging --device $deviceName",
     "ios:release": "echo '蘋果在本機安裝測試' && react-native run-ios --configuration Release --device Grace",
     "ios:push-staging": "echo '蘋果測試發佈' && appcenter codepush release-react -d Staging -t '*' -a weimi/newapp-ios",
     "ios:push-release": "echo '蘋果正式發佈' && appcenter codepush release-react -d Production -t '*' -a weimi/newapp-ios",
