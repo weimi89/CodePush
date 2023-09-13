@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>版本号 1.5.1</Text>
+      <Text style={styles.welcome}>版本号 1.5.2</Text>
       <Text style={styles.instructions}>{message}</Text>
       <Text style={styles.instructions}>{showProgress}</Text>
     </View>

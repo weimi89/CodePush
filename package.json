@@ -9,7 +9,7 @@
     "start": "react-native start",
     "test": "jest",
 
-    "android:staging": "echo '安卓在本機安裝測試' && react-native run-android --mode=releaseStaging",
+    "android:staging": "echo '安卓在本機安裝測試' && react-native run-android --mode=staging",
     "android:release": "echo '安卓在本機安裝正式' && react-native run-android --mode=release",
     "android:push-staging": "echo '安卓測試發佈' && appcenter codepush release-react -d Staging -t '*' -a weimi/newapp-android",
     "android:push-release": "echo '安卓正式發佈' && appcenter codepush release-react -d Production -t '*' -a weimi/newapp-android",
