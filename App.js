@@ -5,7 +5,7 @@ import {
   DeviceEventEmitter
 } from "react-native";
 
-// const codePushOptions = { checkFrequency: codePush.CheckFrequency.MANUAL };
+const codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
 
 const App = () => {
 
@@ -23,7 +23,11 @@ const App = () => {
           setShowProgress('')
         }
       })
-      .catch((error) => console.log(error))
+      .catch((error) => {
+        console.log(error)
+        setMessage('checkForUpdate 失敗')
+        setShowProgress('')
+      })
   }, []);
 
   const syncInNonSilent = (remotePackage) => {
@@ -45,17 +49,17 @@ const App = () => {
           codePush.restartApp(true)
         }).catch((error) => {
           console.log(error)
-          setMessage('更新出錯，請聯繫管理員！')
+          setMessage('localPackage 更新出錯，請聯繫管理員！')
         })
       }).catch((error) => {
         console.log(error)
-        setMessage('更新出錯，請聯繫管理員！')
+        setMessage('remotePackage 更新出錯，請聯繫管理員！')
       })
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>版本号 1.4.1</Text>
+      <Text style={styles.welcome}>版本号 1.5.1</Text>
       <Text style={styles.instructions}>{message}</Text>
       <Text style={styles.instructions}>{showProgress}</Text>
     </View>
@@ -81,6 +85,6 @@ const styles = StyleSheet.create({
   },
 });
 
-// export default codePush(codePushOptions)(App);
-export default codePush(App)
+export default codePush(codePushOptions)(App);
+// export default codePush(App)
 
