@@ -13,16 +13,16 @@
     "android:release": "echo '安卓在本機安裝正式' && react-native run-android --mode=release",
     "android:push-staging": "echo '安卓測試發佈' && appcenter codepush release-react -d Staging -t '*' -a weimi/newapp-android",
     "android:push-release": "echo '安卓正式發佈' && appcenter codepush release-react -d Production -t '*' -a weimi/newapp-android",
-    "android:display-keys": "echo '安卓查詢 key' && appcenter codepush deployment list -k -a weimi/newapp-android",
+    "android:display-keys": "echo '安卓查詢熱更新 Key' && appcenter codepush deployment list -k -a weimi/newapp-android",
     "android:release-list": "echo '安卓檢視發佈結果' && appcenter codepush deployment list -a weimi/newapp-android",
-    "android:gradlew-staging": "echo '安卓打包測試 apk' && cd android && ./gradlew clean && ./gradlew assembleReleaseStaging && cd ..",
+    "android:gradlew-staging": "echo '安卓打包測試 apk' && cd android && ./gradlew clean && ./gradlew assembleStaging && cd ..",
     "android:gradlew-release": "echo '安卓打包正式 apk' && cd android && ./gradlew clean && ./gradlew assembleRelease && cd ..",
 
     "ios:staging": "echo '蘋果在本機安裝測試' && react-native run-ios --configuration Staging --device Grace",
     "ios:release": "echo '蘋果在本機安裝測試' && react-native run-ios --configuration Release --device Grace",
     "ios:push-staging": "echo '蘋果測試發佈' && appcenter codepush release-react -d Staging -t '*' -a weimi/newapp-ios",
     "ios:push-release": "echo '蘋果正式發佈' && appcenter codepush release-react -d Production -t '*' -a weimi/newapp-ios",
-    "ios:display-keys": "echo '蘋果查詢 key' && appcenter codepush deployment list -k -a weimi/newapp-ios",
+    "ios:display-keys": "echo '蘋果查詢熱更新 Key' && appcenter codepush deployment list -k -a weimi/newapp-ios",
     "ios:release-list": "echo '蘋果檢視發佈結果' && appcenter codepush deployment list -a weimi/newapp-ios"
   },
   "dependencies": {
